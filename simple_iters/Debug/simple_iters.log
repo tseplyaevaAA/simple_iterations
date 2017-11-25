@@ -1,0 +1,19 @@
+﻿Build started 25.11.2017 23:31:52.
+     1>Project "D:\VSProjects\simple_iters\simple_iters\simple_iters.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         D:\VisualStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>d:\vsprojects\simple_iters\simple_iters\source.cpp(45): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>d:\vsprojects\simple_iters\simple_iters\source.cpp(98): warning C4552: '*' : operator has no effect; expected operator with side-effect
+     1>d:\vsprojects\simple_iters\simple_iters\source.cpp(106): warning C4552: '*' : operator has no effect; expected operator with side-effect
+     1>d:\vsprojects\simple_iters\simple_iters\source.cpp(115): warning C4552: '*' : operator has no effect; expected operator with side-effect
+     1>d:\vsprojects\simple_iters\simple_iters\source.cpp(140): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\vsprojects\simple_iters\simple_iters\source.cpp(262): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+       Link:
+         D:\VisualStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\VSProjects\simple_iters\Debug\simple_iters.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\VSProjects\simple_iters\Debug\simple_iters.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\VSProjects\simple_iters\Debug\simple_iters.lib" /MACHINE:X86 Debug\Source.obj
+         simple_iters.vcxproj -> D:\VSProjects\simple_iters\Debug\simple_iters.exe
+     1>Done Building Project "D:\VSProjects\simple_iters\simple_iters\simple_iters.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.45
