@@ -129,14 +129,16 @@ int check_diag_koef(double**a, int n){
 //сравнение векторов k и k+1 итерации. если они укладываются в епсилон - возвращает 1
 bool comparison(double* x, double* x1, int n, float eps)
 {
-	int m = true;
-	for (int i = 0; i < n; i++)
-	{
-		if (abs((x[i] - x1[i]) / x1[i]) > abs(eps))
-		{
-			m = false;
+	int m = false;
+	double temp = 0;
+	double norm1=0;
+	for (int i = 0; i < n; i++){
+		temp = abs(x1[i] - x[i]);
+		if (norm1 < temp){
+			norm1 = temp;
 		}
 	}
+	if ( norm1 <= eps) m = true;
 	return m;
 }
 
@@ -153,21 +155,21 @@ int main(){
 	double* b = new double[n];
 	float no = 0;
 
-	/*a[0][0] = 0;
+	a[0][0] = 100;
 	a[0][1] = 6;
 	a[0][2] = -2;
 
 	a[1][0] = 6;
-	a[1][1] = 0;
+	a[1][1] = 200;
 	a[1][2] = -10;
 
 	a[2][0] = 1;
 	a[2][1] = -2;
-	a[2][2] = 0;
+	a[2][2] = -100;
 
 	b[0] = 200;
 	b[1] = 600;
-	b[2] = 500;*/
+	b[2] = 500;
 
 	//for (int i = 0; i < n; i++){
 	//	for (int j = 0; j < n; j++)
@@ -182,7 +184,7 @@ int main(){
 	//ЗАДАЮ МАТРИЦУ 
 
 	//генерирую матрицу с диаг преобл-ем
-	generate_diag(a, b, n);
+	//generate_diag(a, b, n);
 
 	int check1 = check_diag_koef(a, n);
 
@@ -242,7 +244,7 @@ int main(){
 			if (norm(alf, n) < 1){ //проверка на сходимость решения
 				while (m != 1)
 				{
-					//	cout << "Iteration  : " << iter + 1 << endl;			
+				//		cout << "Iteration  : " << iter + 1 << endl;			
 					for (int i = 0; i < n; i++){
 						double sum = 0;
 						for (int j = 0; j < n; j++){
@@ -250,16 +252,19 @@ int main(){
 								sum += alf[i][j] * x[i];
 							}
 						}
-						x[i] = x1[i];
 						x1[i] = b[i] + sum;
 
 					}
 
-					/*cout << "Vector X 1" << endl;
+				/*	cout << "Vector X 1" << endl;
 					for (int i = 0; i < n; i++){ printf("%f", x1[i]); cout << endl; }
 					cout << endl;
 					cout << endl;*/
 					m = comparison(x, x1, n, eps);
+					for (int i = 0; i < n; i++){
+						x[i] = x1[i];
+					}
+					
 					iter++;
 				}
 			}
